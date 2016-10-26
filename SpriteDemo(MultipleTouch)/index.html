@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lancome</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<script type="text/javascript" src="js/game.js"></script>
+  <style type="text/css">
+    body{
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper" id="bg">
+    <script type="text/javascript"> 
+          isTouchSupported = 'ontouchstart' in window ;
+          prepareCanvas(document.getElementById("bg"), 1280 , 700 , "game");
+
+          var startEvent = isTouchSupported ? 'touchstart' : 'mousedown' ; 
+          var moveEvent = isTouchSupported ? 'touchmove' : 'mousemove' ; 
+          var endEvent  = isTouchSupported ? 'touchend' : 'mouseup'; 
+          var canvas = document.getElementById("game");     // handle the touch event
+          canvas.addEventListener(startEvent,handleTheTouchDown,false);
+          canvas.addEventListener(endEvent,handleTheTouchUp,false);
+          canvas.addEventListener(moveEvent,handleTheTouchMove,false);
+        
+    </script>
+</div>
+</body>
+</html>
+

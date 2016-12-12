@@ -2,7 +2,7 @@
 HTML5 canvas , sprite  multiple touch  drag drop and resize demo project
 
 # Getting Started
-#clone the repo
+clone the repo
 git clone https://github.com/Pepeye/sandbox
 
 #Learning Resources

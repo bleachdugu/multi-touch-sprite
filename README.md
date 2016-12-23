@@ -3,7 +3,7 @@ HTML5 canvas , sprite  multiple touch  drag drop and resize demo project
 
 # Getting Started
 clone the repo
-git clone https://github.com/Pepeye/sandbox
+git clone https://github.com/bleachdugu/sprite-dragdrop-enlarge-HTML5-multipletouch.git
 
 #Learning Resources
 https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5

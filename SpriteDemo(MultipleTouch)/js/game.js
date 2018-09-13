@@ -33,8 +33,8 @@ function prepareCanvas(canvasDiv, canvasWidth, canvasHeight, canvasID)
 {
 	// Create the canvas (Neccessary for IE because it doesn't know what a canvas element is)
 	canvas = document.createElement('canvas');
-	canvas.setAttribute('width', canvasWidth);
-	canvas.setAttribute('height', canvasHeight);
+	// canvas.setAttribute('width', canvasWidth);
+	// canvas.setAttribute('height', canvasHeight);
 	canvas.setAttribute('id', canvasID);
 	canvasDiv.appendChild(canvas);
   offsetX = document.getElementById("game").offsetLeft;
@@ -45,7 +45,7 @@ function prepareCanvas(canvasDiv, canvasWidth, canvasHeight, canvasID)
 
   loadImage('pic');   
 	loadImage('sticker');		
-  LoadSprite();
+  LoadSprite('images/Sprite.png');
 
 }
 
@@ -233,14 +233,14 @@ function updatePosition(mouseX,mouseY,X,Y,moveNow) {
 
 // ======== draw function  =========
 
-function LoadSprite() {
+function LoadSprite(src) {
   var config = new Config({
       width:528/4,
       height:291/3,
       frameSpeed:1
      });
 
-  var stickerSprite = new SpriteSheet('images/Sprite.png',config.width, config.height);
+  var stickerSprite = new SpriteSheet(src,config.width, config.height);
   sticker  = new Animation(stickerSprite, 10, 0,11,0,0); 
 }
 
@@ -265,33 +265,6 @@ function drawTouch() {
   }
   
 }
-
-
-// drawEllipse (shadow)
-function drawEllipse(centerX, centerY, width, height) {
-  
-  context.beginPath();
-  
-  context.moveTo(centerX, centerY - height/2);
-  
-  context.bezierCurveTo(
-	centerX + width/2, centerY - height/2,
-	centerX + width/2, centerY + height/2,
-	centerX, centerY + height/2);
-
-  context.bezierCurveTo(
-	centerX - width/2, centerY + height/2,
-	centerX - width/2, centerY - height/2,
-	centerX, centerY - height/2);
- 
-  context.fillStyle = "gray";
-  context.fill();
-  context.closePath();	
-}
-
-
-
-
 //============Sprite object Module ============
 
 var Config = function(obj) {
